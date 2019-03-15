@@ -35,11 +35,14 @@ describe('jQuery', function () {
     $.ajax({
       url:'https://raw.githubusercontent.com/FE-star/exercise1/master/test/test.js',
       type:'GET',
+      async: false,
       success: function(data){
+        console.log('拿到文件，文件内容为：');
+        console.log(data);
         done();
-        return data;
       },
       error:function(error){
+        console.log('为拿到文件，错误信息为：');
         console.log(error);
       }
     });
